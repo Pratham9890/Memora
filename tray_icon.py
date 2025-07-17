@@ -10,7 +10,7 @@ def create_image():
 
 # Launch main.py
 def launch_menu(icon, item):
-    launch_script('main')
+    launch_script('components/main')
 
 
 
@@ -35,5 +35,5 @@ icon = Icon(
         MenuItem('Exit', exit_app)
     )
 )
-alarm = launch_script('alarm_runner')
+alarm = launch_script('components/alarm_runner')
 icon.run()

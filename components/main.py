@@ -5,6 +5,9 @@ File = "alarms.txt"
 
 def main():
     while True:
+        if not os.path.exists(File):
+            with open(File, "w") as f:
+                f.write("")
         
         print("\nAlarm Management System")
         print("1. Set Alarm")
@@ -38,7 +41,6 @@ def main():
 def view_alarms():
     # returning in the form of a list
     if not os.path.exists(File):
-        print("No alarms set.")
         return
 
     with open(File, "r") as f:
@@ -50,6 +52,7 @@ def delete_alarm():
     
     alarms = view_alarms()
     if not alarms:
+        print("No alarms to delete.")
         return
     # displaying the alarms to the user for deletion
     print("Select an alarm to delete:")
