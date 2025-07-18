@@ -28,7 +28,7 @@ def exit_app(icon, item):
 # Create and run tray icon
 icon = Icon(
     'Memora',
-    icon=create_image(),
+    icon=Image.open('components/icon.png'),
     title='Simple Tray',
     menu=Menu(
         MenuItem('Launch Menu', launch_menu),
