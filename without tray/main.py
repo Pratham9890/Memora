@@ -5,7 +5,7 @@ File = "alarms.txt"
 
 def main():
     while True:
-        
+
         print("\nAlarm Management System")
         print("1. Set Alarm")
         print("2. View Alarms")
@@ -47,7 +47,7 @@ def view_alarms():
 
 
 def delete_alarm():
-    
+
     alarms = view_alarms()
     if not alarms:
         return

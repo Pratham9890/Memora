@@ -1,6 +1,7 @@
 from datetime import datetime
 from win11toast import toast
 
+
 class Alarm:
     def __init__(self, time_str):
         self.time_str = time_str.strip()
