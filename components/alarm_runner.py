@@ -2,6 +2,7 @@ from datetime import datetime
 from win11toast import toast
 import time
 import os
+import simpleaudio as sa
 
 ALARM_FILE = "alarms.txt"
 
@@ -11,13 +12,19 @@ def load_alarms():
     with open(ALARM_FILE, "r") as f:
         return [line.strip() for line in f if line.strip()]
 
+def play_alarm_sound():
+    wave_obj = sa.WaveObject.from_wave_file("components/alarm.wav")
+    wave_obj.play()
+
 def run_alarm_check():
     now_str = datetime.now().strftime("%H:%M")
     alarms = load_alarms()
-
+    
     if now_str in alarms:
+        play_alarm_sound()
         toast("⏰ Alarm!", f"It's {now_str}")
         print(f"[{now_str}] Alarm triggered.")
+        
     else:
         print(f"[{now_str}] No alarm.")
 
