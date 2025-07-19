@@ -10,13 +10,17 @@ ALARM_FILE = "alarms.txt"
 def load_alarms():
     if not os.path.exists(ALARM_FILE):
         return []
+    
+    lines=[]
     with open(ALARM_FILE, "r") as f:
-        return [line.strip() for line in f if line.strip()]
+            for line in f:
+                lines.append(line.strip())
+            return lines
 
 
 def play_alarm_sound():
     wave_obj = sa.WaveObject.from_wave_file("components/alarm.wav")
-    play_obj = wave_obj.play()
+    wave_obj.play()
 
 def run_alarm_check():
     now_str = datetime.now().strftime("%H:%M")

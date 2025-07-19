@@ -15,13 +15,13 @@ def main():
         print("3. Delete Alarm")
         print("4. Exit")
         choice = input("Enter your choice: ")
-        # clear the cmd terminal
+        # clear the console
         os.system("cls" if os.name == "nt" else "clear")
 
         if choice == "1":
             set_alarm()
         elif choice == "2":
-            # reading from the file and displaying alarms
+            # view alarms and display them
             alarms = view_alarms()
             if alarms:
                 print("Current Alarms:")
@@ -90,8 +90,12 @@ def set_alarm():
 
     # check if alarm already exists if not then append to the file
     with open(File, "r") as f:
-        existing_alarms = f.readlines()
-    if alarm_time + "\n" in existing_alarms:
+        existing_alarms = []
+        l = f.readlines()
+        for alarm in l:
+            existing_alarms.append(alarm.strip())
+    # check if the alarm already exists
+    if alarm_time in existing_alarms:
         print("Alarm already set.")
         return
 
@@ -102,21 +106,22 @@ def set_alarm():
 
 
 def validate_time_format(time_str):
-    # print errors at each if below
+    # validate that the time is in HH:MM format
     parts = time_str.split(":")
     if len(parts) != 2 or len(time_str) != 5:
         print("Time must be in HH:MM format.")
         return False
 
     hours, minutes = parts
-    # account for missing 0 before single digit hours and minutes
-    if len(hours) == 1 or len(minutes) == 1:
+    # validate that hours and minutes are two digits
+    if len(hours) != 2 or len(minutes) != 2:
         print("Hours and minutes should be in two-digit format (e.g., 01:05).")
         return False
-    # validate that hours and minutes are digits and within valid ranges
+    # validate that hours and minutes are numeric
     if not (hours.isdigit() and minutes.isdigit()):
         print("Hours and minutes must be numeric.")
         return False
+    # validate that hours are between 00 and 23 and minutes are between 00 and 59
     if not (0 <= int(hours) < 24 and 0 <= int(minutes) < 60):
         print("Hours must be between 00 and 23, and minutes must be between 00 and 59.")
         return False
