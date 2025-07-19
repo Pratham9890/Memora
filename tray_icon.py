@@ -11,11 +11,13 @@ def launch_menu(icon, item):
 
 def launch_script(script_name):
     if getattr(sys, "frozen", False):
-        return subprocess.Popen([script_name + ".exe"])  # if running as a bundled executable
+        return subprocess.Popen(
+            [script_name + ".exe"]
+        )  # if running as a bundled executable
     else:
         return subprocess.Popen(
-            [sys.executable, script_name + ".py"]   # When running as python script
-        )  
+            [sys.executable, script_name + ".py"]  # When running as python script
+        )
 
 
 # Exit tray
