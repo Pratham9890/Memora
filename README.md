@@ -3,7 +3,7 @@
 </p>
 <p align="center"><h1 align="center">MEMORA</h1></p>
 <p align="center">
-	<em><code>❯ Memora</code></em>
+	<em><code>❯ "Memora" is a latin word meaning "Memory" in English.</code></em>
 </p>
 <p align="center">
 	<img src="https://img.shields.io/github/license/Pratham9890/Memora?style=default&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
