@@ -54,7 +54,7 @@
 └── Memora/
     ├── README.md
     ├── alarms.txt
-	├── project.py
+    ├── project.py
     ├── components
     │   ├── alarm.wav
     │   ├── alarm_runner.py
