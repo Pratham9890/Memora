@@ -3,7 +3,7 @@
 </p>
 <p align="center"><h1 align="center">MEMORA</h1></p>
 <p align="center">
-	<em><code>❯ "Memora" is a latin word meaning "Memory" in English.</code></em>
+	<em><code>❯ Memora</code></em>
 </p>
 <p align="center">
 	<img src="https://img.shields.io/github/license/Pratham9890/Memora?style=default&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
@@ -146,12 +146,28 @@ Install Memora using one of the following methods:
 
 
 
-### 🤖 Usage
+### 🤖 Usage (with Windows tray)
 Run Memora using the following command:
-**Using `pip`** &nbsp; [<img align="center" src="https://img.shields.io/badge/Pip-3776AB.svg?style={badge_style}&logo=pypi&logoColor=white" />](https://pypi.org/project/pip/)
 
 ```sh
 ❯ python tray_icon.py  
+```
+Add, Delete and View alarms using Launch Menu button by right clicking the tray icon.
+
+![Screenshot](https://gist.github.com/user-attachments/assets/e0a5bdc2-d1a2-43de-8a11-0b60f6a76272)
+
+### 🤖 Usage (without Windows tray)
+Set alarm using the following command:
+
+
+```sh
+❯ python project.py  
+```
+Start alarm runner using the following command:
+
+
+```sh
+❯ python components/alarm_runner.py
 ```
 
 
