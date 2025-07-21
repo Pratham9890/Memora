@@ -15,6 +15,7 @@ def main():
         print("3. Delete Alarm")
         print("4. Exit")
         choice = input("Enter your choice: ")
+
         # clear the console
         os.system("cls" if os.name == "nt" else "clear")
 
@@ -23,17 +24,20 @@ def main():
         elif choice == "2":
             # view alarms and display them
             alarms = view_alarms()
+
             if alarms:
                 print("Current Alarms:")
                 for i, alarm in enumerate(alarms, start=1):
                     print(f"{i}. {alarm.strip()}")
             else:
                 print("No alarms set.")
+
         elif choice == "3":
             delete_alarm()
         elif choice == "4":
             print("Exiting...")
             break
+
         else:
             print("Invalid choice. Please try again.")
 
@@ -55,6 +59,7 @@ def delete_alarm():
         print("No alarms to delete.")
         return
     # displaying the alarms to the user for deletion
+
     print("Select an alarm to delete:")
     for i, alarm in enumerate(alarms, start=1):
         print(f"{i}. {alarm.strip()}")
@@ -73,6 +78,8 @@ def delete_alarm():
         del alarms[int(alarm_to_delete) - 1]
         with open(File, "w") as f:
             f.writelines(alarms)
+
+        # clear the console
         os.system("cls" if os.name == "nt" else "clear")
         print("Alarm deleted.")
         return
@@ -117,10 +124,12 @@ def validate_time_format(time_str):
     if len(hours) != 2 or len(minutes) != 2:
         print("Hours and minutes should be in two-digit format (e.g., 01:05).")
         return False
+
     # validate that hours and minutes are numeric
     if not (hours.isdigit() and minutes.isdigit()):
         print("Hours and minutes must be numeric.")
         return False
+
     # validate that hours are between 00 and 23 and minutes are between 00 and 59
     if not (0 <= int(hours) < 24 and 0 <= int(minutes) < 60):
         print("Hours must be between 00 and 23, and minutes must be between 00 and 59.")
