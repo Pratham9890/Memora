@@ -154,7 +154,7 @@ Run Memora using the following command:
 ```
 Add, Delete and View alarms using Launch Menu button by right clicking the tray icon.
 
-![Screenshot](https://gist.github.com/user-attachments/assets/e0a5bdc2-d1a2-43de-8a11-0b60f6a76272)
+![Screenshot](https://gist.github.com/user-attachments/assets/e0a5bdc2-d1a2-43de-8a11-0b60f6a76272.png)
 
 ### 🤖 Usage (without Windows tray)
 Set alarm using the following command:
