@@ -6,7 +6,7 @@ from PIL import Image, ImageDraw
 
 # Launch main.py
 def launch_menu(icon, item):
-    launch_script("components/main")
+    launch_script("project")
 
 
 def launch_script(script_name):

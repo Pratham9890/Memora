@@ -54,11 +54,11 @@
 └── Memora/
     ├── README.md
     ├── alarms.txt
+	├── project.py
     ├── components
     │   ├── alarm.wav
     │   ├── alarm_runner.py
     │   ├── icon.png
-    │   └── main.py
     ├── requirements.txt
     └── tray_icon.py
 ```
@@ -83,6 +83,10 @@
 				<td><b><a href='https://github.com/Pratham9890/Memora/blob/master/alarms.txt'>alarms.txt</a></b></td>
 				<td><code>❯ store alarm in storage to avoid short term memory loss</code></td>
 			</tr>
+			<tr>
+				<td><b><a href='https://github.com/Pratham9890/Memora/blob/master/project.py'>project.py</a></b></td>
+				<td><code>❯ File containg main function and used to manage alarms</td>
+			</tr>
 			</table>
 		</blockquote>
 	</details>
@@ -90,10 +94,6 @@
 		<summary><b>components</b></summary>
 		<blockquote>
 			<table>
-			<tr>
-				<td><b><a href='https://github.com/Pratham9890/Memora/blob/master/components/main.py'>main.py</a></b></td>
-				<td><code>❯ It says main but its actually the script which is used to manage the alarms</code></td>
-			</tr>
 			<tr>
 				<td><b><a href='https://github.com/Pratham9890/Memora/blob/master/components/alarm.wav'>alarm.wav</a></b></td>
 				<td><code>❯ Alarm ringtone Source: [<a href="https://themushroomkingdom.net/sounds/smb/smb_stage_clear.wav">Super Mario Bros Stage Clear</a>]</code></td>
