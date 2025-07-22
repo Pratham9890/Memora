@@ -1,4 +1,4 @@
-﻿<p align="center">
+﻿﻿<p align="center">
     <img src="https://github.com/Pratham9890/Memora/blob/main/components/icon.png?raw=true" align="center" width="35%">
 </p>
 <p align="center"><h1 align="center">MEMORA</h1></p>
@@ -47,6 +47,10 @@
 <code>❯ Add alarms/reminders to ring at a time with sound</code>
 
 ---
+## <img src="https://em-content.zobj.net/content/2020/04/05/yt.png" alt="yt" width="25"/> Video Demo: <a href="https://www.youtube.com/watch?v=hh13LQLyFoE" target="_blank">
+  <img src="https://img.youtube.com/vi/hh13LQLyFoE/0.jpg" alt="Watch the video" width="400" />
+</a>
+
 
 ## 📁 Project Structure
 
