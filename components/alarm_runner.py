@@ -1,48 +1,55 @@
 from datetime import datetime
-from win11toast import toast
+from plyer import notification
 import time
 import os
 import simpleaudio as sa
 
 ALARM_FILE = "alarms.txt"
+last_triggered = None
 
 
 def load_alarms():
     if not os.path.exists(ALARM_FILE):
         return []
-
-    lines = []
     with open(ALARM_FILE, "r") as f:
-        for line in f:
-            lines.append(line.strip())
-        return lines
+        return [line.strip() for line in f]
 
 
 def play_alarm_sound():
-    wave_obj = sa.WaveObject.from_wave_file("components/alarm.wav")
-    wave_obj.play()
+    try:
+        wave_obj = sa.WaveObject.from_wave_file("components/alarm.wav")
+        wave_obj.play()
+    except Exception as e:
+        print(f"Error playing alarm sound: {e}")
 
 
 def run_alarm_check():
+    global last_triggered
     now_str = datetime.now().strftime("%H:%M")
     alarms = load_alarms()
 
-    if now_str in alarms:
+    if now_str in alarms and now_str != last_triggered:
+        last_triggered = now_str
         play_alarm_sound()
-        toast("⏰ Alarm!", f"It's {now_str}")
-        print(f"[{now_str}] Alarm triggered.")
 
+        try:
+            notification.notify(
+                title="⏰ Alarm!",
+                message=f"It's {now_str}",
+                timeout=5  # seconds
+            )
+        except Exception as e:
+            print(f"Error showing notification: {e}")
+
+        print(f"[{now_str}] Alarm triggered.")
     else:
         print(f"[{now_str}] No alarm.")
 
 
 def main():
     print("🚀 Alarm runner started...")
-
     while True:
         run_alarm_check()
-
-        # Sleep until the start of the next minute
         now = datetime.now()
         seconds_to_next_minute = 60 - now.second
         time.sleep(seconds_to_next_minute)
