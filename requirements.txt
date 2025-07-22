@@ -1,4 +1,4 @@
 Pillow==11.3.0
+plyer==2.1.0
 pystray==0.19.5
 simpleaudio==1.0.4
-win11toast==0.35
